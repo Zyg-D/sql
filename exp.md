@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------
 **Leaving only a row with max value in group**
 
-Option 1. Good, but requires the column to max to actually have one max in every group. If there are several records in a group with identical max, only one will remain. Good with timestamps. 
+Option 1. Good, but requires the column to max to actually have one max in every group. If there are several records in a group with identical max, only one will remain. **Best with timestamps**. 
 ```sql
 WITH 
 tbl_max_date AS 
