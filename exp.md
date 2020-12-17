@@ -20,7 +20,7 @@ tbl_src AS
   (SELECT * FROM `tests2.o1.mc`)
 SELECT *
 FROM
-  (SELECT id, question, max(date) AS date -- the same field name
+  (SELECT id, question, MAX(date) AS date -- the same field name
    FROM tbl_src
    GROUP BY id, question
    ORDER BY id, question)
