@@ -15,7 +15,9 @@ WHERE rn = 1
 
 Option 2. Keeps identical max values in a group.
 ```sql
-WITH tbl_src AS (SELECT * FROM `tests2.o1.mc`)
+WITH
+tbl_src AS 
+  (SELECT * FROM `tests2.o1.mc`)
 SELECT *
 FROM
   (SELECT id, question, max(date) AS date -- the same field name
