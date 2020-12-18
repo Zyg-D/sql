@@ -15,11 +15,11 @@ WHERE rn = 1
 
 Option 2. Keeps identical max values in a group. RANK() instead of ROW_NUMBER().
 ```sql
-WITH tbl_max_date AS (
-  SELECT *,
-         RANK() OVER (PARTITION BY id, question ORDER BY date DESC) AS rn
-  FROM `tests2.o1.mc`
-)
+WITH 
+tbl_max_date AS 
+  (SELECT *,
+          RANK() OVER (PARTITION BY id, question ORDER BY date DESC) AS rn
+   FROM `tests2.o1.mc`)
 SELECT *
 FROM tbl_max_date
 WHERE rn = 1
