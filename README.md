@@ -42,8 +42,8 @@ pivot
 (
   max(id) foo, -- calculation and new col sufix
   max(1)  bar -- calculation and new col sufix
-  for (hobbies) -- old column to pivot
-  IN ('2' as two, '3' as three) -- values from the old column as names of new columns
+  for (hobbies) -- old col to pivot
+  IN ('2' as two, '3' as three) -- values from the old col as names for new cols
 )
 ```
 result:
@@ -69,8 +69,8 @@ sale_stats ( id, year, A_qty, A_val, B_qty, B_val ) as
 )
 SELECT * FROM sale_stats
 UNPIVOT (
-    (quantity, amount) -- new col names for values
-    FOR product_code -- new col name for dimension (old col names)
+    (quantity, amount) -- new col names for old values
+    FOR product_code -- name for new dimension col (old col names will go to this col as values)
     IN (
         (a_qty, a_val) AS 'A', -- old col names as new values in dimension col
         (b_qty, b_val) AS 'B' 
