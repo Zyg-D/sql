@@ -40,8 +40,8 @@ select *
 from employee 
 pivot
 (
-  max(id) foo, -- calculation and col sufix
-  max(1)  bar -- calculation and col sufix
+  max(id) foo, -- calculation and new col sufix
+  max(1)  bar -- calculation and new col sufix
   for (hobbies) -- old column to pivot
   IN ('2' as two, '3' as three) -- values from the old column as names of new columns
 )
