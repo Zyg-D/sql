@@ -1,3 +1,7 @@
+**All accessible tables, views (Oracle)**
+
+    select * from ALL_TAB_COLUMNS
+
 **Pivot (Oracle)**
 
 Selecting all except specified columns
