@@ -1,3 +1,16 @@
+**Example table (Oracle)**
+```sql
+WITH
+x(id, yr, more_info) AS
+    (SELECT 1, 2020, 'info1' FROM DUAL UNION 
+     SELECT 2, 2021, 'info2' FROM DUAL UNION 
+     SELECT 3, 2021, 'info3' FROM DUAL UNION 
+     SELECT 4, 2020, 'info4' FROM DUAL ),
+n(n_id, n_id2, n_year) AS
+    (SELECT 1, 3, 2021 FROM DUAL UNION 
+     SELECT 2, 4, 2021 FROM DUAL )
+```
+
 **All accessible tables, views (Oracle)**
 
     select * from ALL_TAB_COLUMNS
