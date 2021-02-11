@@ -1,4 +1,4 @@
-**Example table (Oracle WITH)**
+**Example table (Oracle)**
 
 WITH
 
