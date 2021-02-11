@@ -1,4 +1,7 @@
-**Example table (Oracle)**
+**Example table (Oracle WITH)**
+
+WITH
+
 ```sql
 WITH
 x(id, yr, more_info) AS
@@ -11,7 +14,20 @@ n(n_id, n_id2, n_year) AS
      SELECT 2, 4, 2021 FROM DUAL )
 ```
 
+CREATE
+
+```sql
+CREATE TABLE tbl_x
+( c1 varchar2(10),
+  c2 varchar2(50) );
+INSERT INTO tbl_x (c1,  c2 )
+VALUES            ('a', 'b');
+```
+
 **Example table (Big Query)**
+
+WITH
+
 ```sql
 WITH 
 Roster AS
