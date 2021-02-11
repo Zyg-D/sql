@@ -20,8 +20,18 @@ CREATE
 CREATE TABLE tbl_x
 ( c1 varchar2(10),
   c2 varchar2(50) );
+-- Insert just 1 sample row:
 INSERT INTO tbl_x (c1,  c2 )
 VALUES            ('a', 'b');
+-- Insert many sample rows:
+INSERT INTO tbl_x (c1,  c2 )
+          SELECT   'a', 'b' FROM DUAL
+UNION ALL SELECT   'c', 'd' FROM DUAL;
+-- Insert many rows efficiently:
+INSERT ALL
+  INTO tbl_x (c1, c2) VALUES ('a', 'b')
+  INTO tbl_x (c1, c2) VALUES ('c', 'd')
+SELECT 1 FROM DUAL;
 ```
 
 **Example table (Big Query)**
