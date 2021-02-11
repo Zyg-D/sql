@@ -144,5 +144,19 @@ result:
 +----+------+--------------+----------+--------+
 ```
 
+**Merge (Oracle)**
+
+```sql
+MERGE INTO tbl_destination d
+    USING tbl_new_data n
+    ON (d.c1 = n.c1 AND d.c2 = n.c2)
+  WHEN MATCHED THEN
+    UPDATE SET d.d1 = n.d1
+         WHERE d.d1 IS NULL
+  WHEN NOT MATCHED THEN
+    INSERT (c1, c2, d1)
+    VALUES (n.c1, n.c2, n.d1);
+```
+
 --------------------------------------------------------------
 
